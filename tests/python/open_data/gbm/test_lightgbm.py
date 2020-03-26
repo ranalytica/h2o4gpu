@@ -278,7 +278,7 @@ def test_lightgbm_gpu_airlines_year(booster, year):
                                    #                                    "2002", "2003", "2004", "2005", "2006", "2007"
                                    ])
 @pytest.mark.timeout(3600)
-def test_lightgbm_gpu_airlines_year(booster, year):
+def test_lightgbm_cuda_airlines_year(booster, year):
     import numpy as np
     import pandas as pd
     from h2o4gpu.util.lightgbm_dynamic import got_cpu_lgb, got_gpu_lgb
