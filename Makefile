@@ -227,9 +227,7 @@ install_xgboost:
 
 install_lightgbm_gpu:
 	@echo "----- pip install lightgbm_gpu built locally -----"
-	bash -c 'if [ `arch` != "ppc64le" ]; then \
-	cd LightGBM/python-package/dist_gpu && $(PYTHON) -m pip install lightgbm*-py3-none-any.whl --no-deps --target . ; \
-	fi'
+	cd LightGBM/python-package/dist_gpu && $(PYTHON) -m pip install lightgbm*-py3-none-any.whl --no-deps --target .
 
 install_lightgbm_cpu:
 	@echo "----- pip install lightgbm (for CPU) built locally -----"
