@@ -346,7 +346,7 @@ def test_lightgbm_accuracy_cpu():
               eval_init_score=init_score, eval_metric=eval_metric, early_stopping_rounds=early_stopping_rounds, feature_name=X_features, verbose=verbose_fit)
 
     eval_loss = model.evals_result_['name0']['multi_logloss']
-    assert len(eval_loss) > 190
+    assert len(eval_loss) > 150
     assert eval_loss[-1] < 0.33
 
 
@@ -369,8 +369,9 @@ def test_lightgbm_accuracy_gpu():
               eval_init_score=init_score, eval_metric=eval_metric, early_stopping_rounds=early_stopping_rounds, feature_name=X_features, verbose=verbose_fit)
 
     eval_loss = model.evals_result_['name0']['multi_logloss']
-    assert len(eval_loss) > 190
+    assert len(eval_loss) > 150
     assert eval_loss[-1] < 0.33
+
 
 def test_lightgbm_accuracy_cuda():
     import pickle
@@ -390,9 +391,8 @@ def test_lightgbm_accuracy_cuda():
               eval_init_score=init_score, eval_metric=eval_metric, early_stopping_rounds=early_stopping_rounds, feature_name=X_features, verbose=verbose_fit)
 
     eval_loss = model.evals_result_['name0']['multi_logloss']
-    assert len(eval_loss) > 190
+    assert len(eval_loss) > 150
     assert eval_loss[-1] < 0.33
-
 
 
 if __name__ == '__main__':
